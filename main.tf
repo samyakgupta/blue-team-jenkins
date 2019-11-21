@@ -11,3 +11,14 @@ provider "aws" {
   region  = "${local.aws_region}"
   profile = "ShellPowerUser"
 }
+
+module "jenkins_master_module" {
+  source = "modules/master"
+}
+
+module "jenkins_node_module" {
+  source = "modules/node"
+}
+
+
+
