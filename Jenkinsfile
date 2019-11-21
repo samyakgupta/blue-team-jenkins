@@ -1,40 +1,45 @@
 pipeline {
     agent any
     stages{
-        stage("clone repo"){
-
-        }
-
         stage("build ami with packer"){
-            sh """
+            steps {
+                sh """
                 packer version
-            """
+                """
+            }
         }
 
         stage("terraform init"){
-            sh """
-                terraform version
-            """
-
+            steps {
+                sh """
+                    terraform version
+                """
+            }
         }
 
         stage("terraform plan"){
-            sh """
-                terraform version
-            """
+            steps {
+                sh """
+                    terraform version
+                """
+            }
 
         }
 
         stage("terraform apply"){
-            sh """
-                terraform version
-            """
+            steps {
+                sh """
+                    terraform version
+                """
+            }
         }
 
         stage("test"){
-            sh """
-                echo 'hello test'
-            """
+            steps {
+                sh """
+                    terraform version
+                """
+            }
         }
     }
     
