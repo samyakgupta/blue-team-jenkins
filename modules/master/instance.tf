@@ -1,7 +1,6 @@
 resource "aws_security_group" "master_sg" {
   name        = "master_sg"
   description = "Security group for jenkins master node, to allow traffic on 8080"
-  vpc_id      = "${aws_default_vpc.id}"
 
   ingress {
     # TLS (change to whatever ports you need)
@@ -21,11 +20,15 @@ resource "aws_security_group" "master_sg" {
   }
 }
 
+variable "ami" {
+  default = "asdfasdf"
+}
+
 
 resource "aws_instance" "jenkins_master" {
-  ami           = "${local.jenkins_ami}"
+  ami           = "${var.ami}"
   instance_type = "t2.micro"
-  vpc_security_group_ids = "${aws_security_group.master_sg.id}"
+  vpc_security_group_ids = ["${aws_security_group.master_sg.id}"]
 
   tags = {
     Name = "Jenkins Master"
