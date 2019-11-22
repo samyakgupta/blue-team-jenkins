@@ -32,5 +32,13 @@ module "jenkins_node_module" {
    ami = "${var.node_ami}"
  }
 
+ output "master_ip"{
+   value = module.jenkins_master_module.instance_ip
+ }
+
+  output "node_ip"{
+   value = module.jenkins_node_module.instance_ip
+ }
+
 
 

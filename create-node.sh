@@ -5,7 +5,7 @@ IFS=$'\n\t'
 
 function usage {
     echo '$0 <jenkins_url> <node_name> <credentials>'
-    echo '  for example $0 http://localhost:8080 node1 admin:6e2d443b51884e46b434248c6504ba48'
+    echo '  for example $0 http://localhost:8080 node1 admin:e1cb1ad4942f452e8a0c875fc0ba9106'
 }
 
 if [[ -z ${1:-} ]]; then

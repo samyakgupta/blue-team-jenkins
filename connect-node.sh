@@ -8,7 +8,7 @@ function usage {
 Usage: $0 <url> <node-name> <authentication>
 
 Example:
-    $0 http://localhost:8080 foobar admin:6e2d443b51884e46b434248c6504ba48
+    $0 http://localhost:8080 blue-node admin:e1cb1ad4942f452e8a0c875fc0ba9106
 EOF
 exit 1
 
