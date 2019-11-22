@@ -24,7 +24,7 @@ provider "aws" {
 
 module "jenkins_master_module" {
   source = "./modules/master"
-  ami = "${var.jenkins_ami}"
+  ami = "${var.master_ami}"
 }
 
 module "jenkins_node_module" {
