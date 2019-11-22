@@ -23,10 +23,5 @@ module "jenkins_master_module" {
   ami = "${var.jenkins_ami}"
 }
 
-# module "jenkins_node_module" {
-#   source = "./modules/node"
-#   ami = "${var.node_ami}"
-# }
-
 
 
