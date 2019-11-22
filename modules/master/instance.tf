@@ -1,5 +1,6 @@
 variable "service_ports" {
-  default = ["22","8080","50000"]
+  type = list(number)
+  default = [22, 8080, 50000]
 }
 
 resource "aws_security_group" "master_sg" {
