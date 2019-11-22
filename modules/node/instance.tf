@@ -11,7 +11,10 @@ variable "service_ports" {
 resource "aws_security_group" "node_sg" {
   name        = "blue_node_sg"
   description = "Security group for jenkins node, to allow traffic on 5000"
-
+ 
+  tags = {
+      Name = "blue_node_sg"
+  }
   dynamic "ingress" {
     for_each = var.service_ports
     content {
