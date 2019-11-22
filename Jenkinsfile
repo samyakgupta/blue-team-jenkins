@@ -34,10 +34,10 @@ pipeline {
             }
         }
 
-        stage("connect node"){
+        stage("create node"){
             steps {
                 sh """
-                    terraform version
+                    ssh ubuntu@terraform output master_ip
                 """
             }
         }
