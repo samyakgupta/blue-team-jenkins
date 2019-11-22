@@ -55,8 +55,8 @@ resource "aws_instance" "jenkins_node" {
   }
 }
 
-output "instance_id" {
-  value = "${aws_instance.jenkins_node.id}"
+output "instance_ip" {
+  value = "${aws_instance.jenkins_node.public_ip}"
 }
 
 

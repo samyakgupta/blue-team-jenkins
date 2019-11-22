@@ -9,7 +9,7 @@ terraform {
 }
 
 
-variable "jenkins_ami" {
+variable "master_ami" {
   default = "ami-0ca4ee4403ecb3a4e"
 }
 
@@ -30,6 +30,14 @@ module "jenkins_master_module" {
 module "jenkins_node_module" {
    source = "./modules/node"
    ami = "${var.node_ami}"
+ }
+
+ output "master_ip"{
+   value = module.jenkins_master_module.instance_ip
+ }
+
+  output "node_ip"{
+   value = module.jenkins_node_module.instance_ip
  }
 
 

@@ -34,7 +34,7 @@ pipeline {
             }
         }
 
-        stage("test"){
+        stage("connect node"){
             steps {
                 sh """
                     terraform version
