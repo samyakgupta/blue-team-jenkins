@@ -23,9 +23,29 @@ pipeline {
                 //     }
                 // }
 
+        stage("terraform plan"){
+            steps {
+                sh """
+                    terraform version
+                """
+            }
 
             }
 
+        stage("terraform apply"){
+            steps {
+                sh """
+                    terraform version
+                """
+            }
+        }
+
+        stage("test"){
+            steps {
+                sh """
+                    terraform version
+                """
+            }
         }
     }
 }
