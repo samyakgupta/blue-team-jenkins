@@ -1,5 +1,5 @@
 resource "aws_security_group" "master_sg" {
-  name        = "master_sg"
+  name        = "blue_master_sg"
   description = "Security group for jenkins master node, to allow traffic on 8080"
 
   ingress {
