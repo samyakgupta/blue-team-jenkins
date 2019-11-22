@@ -18,7 +18,7 @@
 
     {
         "type": "ansible",
-        "playbook_file": "../ansible/jenkins.yml",
+        "playbook_file": "jenkins.yml",
         "extra_arguments": ["-b"]
     }
   ]
