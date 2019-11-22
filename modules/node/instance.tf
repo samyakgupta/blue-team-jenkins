@@ -47,10 +47,13 @@ variable "ami" {
  }
 
 
+
+
 resource "aws_instance" "jenkins_node" {
   ami                    = "${var.ami}"
   instance_type          = "t2.micro"
   vpc_security_group_ids = ["${aws_security_group.node_sg.id}"]
+  key_name = "blue-jenkins-key"
 
   tags = {
     Name        = "blue Node"
