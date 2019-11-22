@@ -4,8 +4,7 @@ provider "aws" {
 }
 
 variable "service_ports" {
-  type = list(number)
-  default = [22, 8080, 50000]
+  default = [22,8080,50000]
 }
 
 resource "aws_security_group" "node_sg" {
