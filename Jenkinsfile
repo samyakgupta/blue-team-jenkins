@@ -4,14 +4,14 @@ pipeline {
 
         stage('playbook') {
             steps {
-                sh 'cd ansible && ansible-playbook *.yml -b'
+                sh 'packer build blue-ami.json'
             }
         }
 
         stage('terraform init'){
             steps{
                 sh """
-                    terraform init
+                    terraform init -no-color
                 """
             }
         }
@@ -19,7 +19,7 @@ pipeline {
         stage("terraform plan"){
             steps {
                 sh """
-                    terraform plan
+                    terraform plan -no-color -out terraform.plan
                 """
             }
 
@@ -28,7 +28,7 @@ pipeline {
         stage("terraform apply"){
             steps {
                 sh """
-                    terraform apply
+                    terraform apply -no-color -auto-approve terraform.plan
                 """
             }
         }
