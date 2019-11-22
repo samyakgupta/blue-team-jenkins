@@ -20,7 +20,13 @@
         "type": "ansible",
         "playbook_file": "jenkins.yml",
         "extra_arguments": ["-b"]
-    }
-  ]
+    }],
 
+    "tags": {
+      "OS_Version": "Ubuntu",
+      "Release": "Latest",
+      "Base_AMI_Name": "{{ .SourceAMIName }}",
+      "Extra": "{{ .SourceAMITags.TagName }}",
+      "Name": "Blue-Team-Image"
+    }
 }
