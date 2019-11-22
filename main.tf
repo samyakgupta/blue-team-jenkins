@@ -9,7 +9,7 @@ terraform {
 }
 
 
-variable "master_ami" {
+variable "jenkins_ami" {
   default = "ami-0ca4ee4403ecb3a4e"
 }
 
