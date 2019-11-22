@@ -2,11 +2,11 @@ pipeline {
     agent any
     stages {
 
-        stage('playbook') {
-            steps {
-                sh 'packer build blue-ami.json'
-            }
-        }
+        // stage('playbook') {
+        //     steps {
+        //         sh 'packer build blue-ami.json'
+        //     }
+        // }
 
         stage('terraform init'){
             steps{
