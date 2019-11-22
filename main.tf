@@ -10,11 +10,11 @@ terraform {
 
 
 variable "master_ami" {
-  default = "ami-asdfasdf"
+  default = "ami-0ca4ee4403ecb3a4e"
 }
 
 variable "node_ami" {
-  default = "ami-asdfasdf"
+  default = "ami-0ca4ee4403ecb3a4e"
 }
 
 provider "aws" {
@@ -27,10 +27,10 @@ module "jenkins_master_module" {
   ami = "${var.master_ami}"
 }
 
-# module "jenkins_node_module" {
-#   source = "./modules/node"
-#   ami = "${var.node_ami}"
-# }
+module "jenkins_node_module" {
+   source = "./modules/node"
+   ami = "${var.node_ami}"
+ }
 
 
 

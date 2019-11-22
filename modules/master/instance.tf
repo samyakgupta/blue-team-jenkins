@@ -21,8 +21,8 @@ resource "aws_security_group" "master_sg" {
 }
 
 variable "ami" {
-  default = "asdfasdf"
-}
+   default = "asdfasdf"
+ }
 
 
 resource "aws_instance" "jenkins_master" {
