@@ -11,7 +11,11 @@
     "source_ami": "ami-05ae0b89b42bc07dd",
     "instance_type": "t2.micro",
     "ssh_username": "ubuntu",
-    "ami_name": "blue-team-image"
+    "ami_name": "blue-team-image",
+    "tags": {
+      "OS_Version": "Ubuntu",
+      "Name": "Blue-Team-Image"
+    }
   }],
 
   "provisioners":[
@@ -20,13 +24,7 @@
         "type": "ansible",
         "playbook_file": "jenkins.yml",
         "extra_arguments": ["-b"]
-    }],
+    }]
 
-    "tags": {
-      "OS_Version": "Ubuntu",
-      "Release": "Latest",
-      "Base_AMI_Name": "{{ .SourceAMIName }}",
-      "Extra": "{{ .SourceAMITags.TagName }}",
-      "Name": "Blue-Team-Image"
-    }
+
 }
