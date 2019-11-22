@@ -11,6 +11,7 @@ pipeline {
         stage('terraform init'){
             steps{
                 sh """
+                    git clean -dfx
                     terraform init -no-color
                 """
             }
