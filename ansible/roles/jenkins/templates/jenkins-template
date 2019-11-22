@@ -1,0 +1,11 @@
+[Unit]
+Description=Jenkins Daemon
+
+[Service]
+ExecStart=/usr/bin/java -jar /usr/local/etc/jenkins.war
+
+[Install]
+WantedBy=multi-user.target
+
+# mike is awesome
+# sai is double awesome

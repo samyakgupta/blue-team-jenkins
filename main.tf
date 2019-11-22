@@ -13,11 +13,11 @@ provider "aws" {
 }
 
 module "jenkins_master_module" {
-  source = "modules/master"
+  source = "./modules/master"
 }
 
 module "jenkins_node_module" {
-  source = "modules/node"
+  source = "./modules/node"
 }
 
 
